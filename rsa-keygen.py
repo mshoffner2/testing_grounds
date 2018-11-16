@@ -1,12 +1,9 @@
-
 # coding: utf-8
-
 # In[1]:
-
-
 import binascii
 from random import *
 import array
+import sys
 
 #finding the value of e, just trying out small primes until one works
 def find_e(a):
