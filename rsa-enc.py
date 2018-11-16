@@ -110,7 +110,7 @@ else:
 
     
 #open and read in key file
-key_file = open(k_f_name, "rb")
+key_file = open(key_f_name, "rb")
 size_N = key_file.readline()
 main_N = key_file.readline()
 main_e = key_file.readline()
