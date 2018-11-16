@@ -28,7 +28,7 @@ def mod_exp(b,e,n):
 def rsa_dec(ciphertext, N, d, size_N):
     #padded_msg = (ciphertext**d) % N
     padded_msg = mod_exp(ciphertext, d, N)
-    #print hex(padded_msg)
+    print hex(padded_msg)
     #print "Size:"
     #print sys.getsizeof(padded_msg)
     
@@ -57,7 +57,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     result = hex(result)[2:]
     result = result[:len(result)-1]
     #print "result"
-    #print result
+    print result
     
     return(result)
     
