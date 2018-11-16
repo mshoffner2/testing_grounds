@@ -42,7 +42,7 @@ def rsa_dec(ciphertext, N, d, size_N):
 
     #search for the null byte marking the changeover from r bytes to message bytes
     while(padded_msg/(2**(i)) % 256 != 0):
-        i = i - 1
+        i = i - 8
     #print "i"
     print(i)
     #print(padded_msg/(2**(i*8)) % 256)
