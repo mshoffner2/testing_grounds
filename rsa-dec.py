@@ -24,6 +24,8 @@ def mod_exp(b,e,n):
 
 def rsa_dec(ciphertext, N, d, size_N):
     padded_msg = mod_exp(ciphertext, d, N)
+    temp = hex(padded_msg)[2:]
+    print(temp)
     #gotta remove padding: check for null byte
     
     #find size of the padded message in bits
@@ -43,29 +45,29 @@ def rsa_dec(ciphertext, N, d, size_N):
         i = i - 1
     #print "i"
     print(i)
-    print(padded_msg/(2**(i*8)) % 256)
+    #print(padded_msg/(2**(i*8)) % 256)
 
     #remove r
     #temp = hex(padded_msg)[2:]
     #print(temp)
 
 
-    #result = padded_msg % (2**(i*8))
+    result = padded_msg % (2**(i*8))
     #change back to hex, remove extra characters added
-    result = padded_msg
-    result = hex(result)[2:]
-    i = len(result)-1
-    keep_going = 1
+    #result = padded_msg
+    #result = hex(result)[2:]
+    #i = len(result)-1
+    #keep_going = 1
 
-    while(keep_going == 1 and i < len(result) - 1):
-        if(result[i] == '0' and result[i + 1] == '0'):
-            keep_going = 0
-        i = i - 1
-    result = result[i:]
-    result = int(result, 16)
+    #while(keep_going == 1 and i < len(result) - 1):
+    #    if(result[i] == '0' and result[i + 1] == '0'):
+    #        keep_going = 0
+    #    i = i - 1
+    #result = result[i:]
+    #result = int(result, 16)
     result = hex(result)[2:]
     #print "result"
-    #print(result)
+    print(result)
     
     return(result)
     
