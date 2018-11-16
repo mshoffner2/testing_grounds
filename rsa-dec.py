@@ -122,7 +122,7 @@ main_d = int(main_d)
 result = rsa_dec(int(my_text), main_N, main_d, int(size_N))
 #open and write to output file
 
-out_file = open(out_f_name, "wb")
+out_file = open(out_f_name, "w")
 out_file.write(str(result))
 out_file.close()
 
