@@ -101,7 +101,7 @@ else:
     exit()
 
 
-in_file = open(in_f_name, "rb")
+in_file = open(in_f_name, "r")
 my_text = in_file.read()
 in_file.close()
 
