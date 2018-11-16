@@ -44,7 +44,7 @@ def rsa_enc(message, N, e, size_N):
     #generating r bytes of randomness, such that no byte is all 0
     for i in range(numBytesR):
         temp_r = 0
-        while (temp_r == 0):
+        while (temp_r == 0 or temp_r < 15 or temp_r % 8 == 0):
             temp_r = getrandbits(8)
             #print(temp_r)
         total_r *= (256)
