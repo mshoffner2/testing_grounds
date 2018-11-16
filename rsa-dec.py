@@ -57,7 +57,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     result = hex(result)[2:]
     result = result[:len(result)-1]
     #print "result"
-    print result
+    print(result)
     
     return(result)
     
