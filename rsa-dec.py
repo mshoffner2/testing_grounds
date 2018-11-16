@@ -38,10 +38,11 @@ def rsa_dec(ciphertext, N, d, size_N):
     i = int(i)
     i = i / 8
     #print "i"
-    print(i)
+    #print(i)
     #print int(i)
     i = int(i)
-    
+    print(i)
+
     #search for the null byte marking the changeover from r bytes to message bytes
     while(padded_msg/(2**(i*8)) % 256 != 0):
         i = i - 1
@@ -55,7 +56,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     result = padded_msg % (2**(i*8))
     #change back to hex, remove extra characters added
     result = hex(result)[2:]
-    result = result[:len(result)-1]
+    #result = result[:len(result)-1]
     #print "result"
     print(result)
     
