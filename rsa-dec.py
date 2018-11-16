@@ -71,8 +71,8 @@ def rsa_dec(ciphertext, N, d, size_N):
             keep_going = 0
         i = i + 1
     result = result[i+1:]
-    #result = int(result, 16)
-    #result = hex(result)[2:]
+    result = int(result, 16)
+    result = hex(result)[2:]
     #print "result"
     print(result)
     
