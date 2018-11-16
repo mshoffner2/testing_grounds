@@ -72,12 +72,12 @@ def is_prime(n):
 
     r,s=factoring(n-1)
     k=10
-    for _ in xrange(k):
+    for _ in range(k):
         a = randrange(2, n - 1)
         x = pow(a, s, n)
         if x == 1 or x == n - 1:
             continue
-        for _ in xrange(r - 1):
+        for _ in range(r - 1):
             x = pow(x, 2, n)
             if x == n - 1:
                 break
