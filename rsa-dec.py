@@ -52,6 +52,9 @@ def rsa_dec(ciphertext, N, d, size_N):
     #print i
     
     #remove r
+	temp = hex(result)[2:]
+	temp = temp[:len(result)-1]
+	print(temp)
     result = padded_msg % (2**(i*8))
     #change back to hex, remove extra characters added
     result = hex(result)[2:]
