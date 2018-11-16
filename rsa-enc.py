@@ -112,14 +112,14 @@ else:
 
     
 #open and read in key file
-key_file = open(key_f_name, "rb")
+key_file = open(key_f_name, "r")
 size_N = key_file.readline()
 main_N = key_file.readline()
 main_e = key_file.readline()
 key_file.close()
 
 #open and read in message file
-msg_file = open(in_f_name, "rb")
+msg_file = open(in_f_name, "r")
 msg_txt = msg_file.read()
 msg_file.close()
 
@@ -131,7 +131,7 @@ size_N = int(size_N)
 result = rsa_enc(msg_txt, main_N, main_e, size_N)
 
 #open and write to output file
-end_file = open(out_f_name, "wb")
+end_file = open(out_f_name, "w")
 end_file.write(result)
 end_file.close()
 

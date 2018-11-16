@@ -106,11 +106,11 @@ else:
     exit()
 
 
-in_file = open(in_f_name, "rb")
+in_file = open(in_f_name, "r")
 my_text = in_file.read()
 in_file.close()
 
-key_file = open(key_f_name, "rb")
+key_file = open(key_f_name, "r")
 size_N = key_file.readline()
 main_N = key_file.readline()
 main_d = key_file.readline()
@@ -122,7 +122,7 @@ main_d = int(main_d)
 result = rsa_dec(int(my_text), main_N, main_d, int(size_N))
 #open and write to output file
 
-out_file = open(out_f_name, "wb")
+out_file = open(out_f_name, "w")
 out_file.write(result)
 out_file.close()
 
