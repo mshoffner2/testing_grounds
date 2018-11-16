@@ -29,9 +29,11 @@ def rsa_dec(ciphertext, N, d, size_N):
     #gotta remove padding: check for null byte
     
     #find size of the padded message in bits
-    i = math.log(padded_msg, 2)
+    temp = math.log(padded_msg, 2)
 
-    #i = padded_msg.bit_length()
+    print(int(temp))
+    i = padded_msg.bit_length()
+    print(int(i))
     #convert to bytes
     i = i + (8 - (i % 8))
     print(i)
@@ -56,7 +58,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     #print(temp)
 
 
-    result = padded_msg % (2**(i))
+    result = padded_msg % (2**(i*8))
     #change back to hex, remove extra characters added
     #result = padded_msg
     #result = hex(result)[2:]
