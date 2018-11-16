@@ -131,7 +131,7 @@ size_N = int(size_N)
 result = rsa_enc(msg_txt, main_N, main_e, size_N)
 
 #open and write to output file
-end_file = open(out_f_name, "wb")
+end_file = open(out_f_name, "w")
 end_file.write(str(result))
 end_file.close()
 
