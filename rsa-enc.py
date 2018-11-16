@@ -39,7 +39,7 @@ def rsa_enc(message, N, e, size_N):
     numBytesR = int(numBytesR)
     print(n)
     print(numBytesR)
-	print(len_msg)
+    print(len_msg)
 
     #generating r bytes of randomness, such that no byte is all 0
     for i in range(numBytesR):
