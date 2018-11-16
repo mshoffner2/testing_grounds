@@ -49,6 +49,8 @@ def rsa_enc(message, N, e, size_N):
         total_r *= (2**8)
         total_r += temp_r
     
+    r_len = int(total_r.bit_length()/8) + 1
+    print(r_len)
     #adding the null byte
     #print hex(total_r)
     total_r *= 2**8
@@ -56,13 +58,15 @@ def rsa_enc(message, N, e, size_N):
     print(temp)
 
     #making space for the message at the end of total_r
-    total_r *= 2**(len(message) * 8)
+    total_r *= 2**(len_msg * 8)
 
     temp = hex(total_r)[2:]
     print(temp)
     
     #adding message to the end. Since message is an AES key, we assume that it's in hex in the file
-    padded_msg = total_r + int(message, 16)
+    padded_msg = total_r + int_msg#int(message, 16)
+    r_len = int(padded_msg.bit_length()/8) + 1
+	print(r_len)
     temp = hex(padded_msg)[2:]
     print(temp)
     
