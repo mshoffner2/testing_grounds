@@ -29,8 +29,9 @@ def rsa_dec(ciphertext, N, d, size_N):
     #gotta remove padding: check for null byte
     
     #find size of the padded message in bits
-    i = math.log(padded_msg, 2)
-    
+    #i = math.log(padded_msg, 2)
+
+    i = padded_msg.bit_length()
     #convert to bytes
     print(i)
     i = int(i)
