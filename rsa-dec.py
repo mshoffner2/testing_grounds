@@ -58,7 +58,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     keep_going = 1
 
     while(keep_going == 1 and i < len(result) - 1):
-        if(result[i] == '0' && result[i + 1] == '0'):
+        if(result[i] == '0' and result[i + 1] == '0'):
             keep_going = 0
         i = i + 1
     result = result[i:]
