@@ -1,8 +1,5 @@
-
 # coding: utf-8
-
 # In[1]:
-
 
 import sys
 import os
@@ -41,7 +38,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     i = int(i)
     i = i / 8
     #print "i"
-    #print i
+    print(i)
     #print int(i)
     i = int(i)
     
@@ -49,7 +46,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     while(padded_msg/(2**(i*8)) % 256 != 0):
         i = i - 1
     #print "i"
-    #print i
+    print(i)
     
     #remove r
     temp = hex(padded_msg)[2:]
