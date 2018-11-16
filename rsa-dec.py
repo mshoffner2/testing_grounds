@@ -29,9 +29,9 @@ def rsa_dec(ciphertext, N, d, size_N):
     #gotta remove padding: check for null byte
     
     #find size of the padded message in bits
-    temp = math.log(padded_msg, 2)
+    #temp = math.log(padded_msg, 2)
 
-    print(int(temp))
+    #print(int(temp))
     i = padded_msg.bit_length()
     print(int(i))
     #convert to bytes
@@ -47,7 +47,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     print(i)
 
     #search for the null byte marking the changeover from r bytes to message bytes
-    while(padded_msg/(2**(i*8)) % 256 != 0):
+    while(int(padded_msg/(2**(i*8))) % 256 != 0):
         i = i - 1
     #print "i"
     print(i)
