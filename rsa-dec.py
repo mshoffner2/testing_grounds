@@ -42,16 +42,17 @@ def rsa_dec(ciphertext, N, d, size_N):
     while(padded_msg/(2**(i*8)) % 256 != 0):
         i = i - 1
     #print "i"
-    print(i)
+    #print(i)
+    print(padded_msg/(2**(i*8)) % 256)
 
     #remove r
-    temp = hex(padded_msg)[2:]
-    print(temp)
+    #temp = hex(padded_msg)[2:]
+    #print(temp)
     result = padded_msg % (2**(i*8))
     #change back to hex, remove extra characters added
     result = hex(result)[2:]
     #print "result"
-    print(result)
+    #print(result)
     
     return(result)
     
