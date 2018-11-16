@@ -46,16 +46,16 @@ def rsa_enc(message, N, e, size_N):
     #adding the null byte
     #print hex(total_r)
     total_r *= 2**8
-    print hex(total_r)
+    print hex(total_r, 10)
  
     #making space for the message at the end of total_r
     total_r *= 2**(len(message) * 8)
 
-    print hex(total_r)
+    print hex(total_r, 10)
     
     #adding message to the end. Since message is an AES key, we assume that it's in hex in the file
     padded_msg = total_r + int(message, 16)
-    print hex(padded_msg)
+    print hex(padded_msg, 10)
     
     #find the cipher
     cipher_result = mod_ex(padded_msg, e, N)
