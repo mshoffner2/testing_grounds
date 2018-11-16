@@ -198,6 +198,6 @@ elif(sys.argv[5] == '-n'):
 else:
     print('usage: rsa-keygen -p <public key file> -s <private key file> -n <number of bits>')
     exit()
-    
+length_n = int(length_n)    
 rsa_keygen(pub_f_name, priv_f_name, length_n)
 
