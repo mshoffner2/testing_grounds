@@ -37,20 +37,21 @@ def rsa_enc(message, N, e, size_N):
 
     numBytesR = n - len_msg - 3
     numBytesR = int(numBytesR)
-    print(n)
-    print(numBytesR)
-    print(len_msg)
+    #print(n)
+    #print(numBytesR)
+    #print(len_msg)
 
     #generating r bytes of randomness, such that no byte is all 0
     for i in range(numBytesR):
         temp_r = 0
         while (temp_r == 0):
             temp_r = getrandbits(8)
-        total_r *= (2**8)
+            #print(temp_r)
+        total_r *= (256)
         total_r += temp_r
     
-    r_len = int(total_r.bit_length()/8) + 1
-    print(r_len)
+    #r_len = int(total_r.bit_length()/8) + 1
+    #print(r_len)
     #adding the null byte
     #print hex(total_r)
     total_r *= 2**8
@@ -61,14 +62,14 @@ def rsa_enc(message, N, e, size_N):
     total_r *= 2**(len_msg * 8)
 
     temp = hex(total_r)[2:]
-    print(temp)
+    #print(temp)
     
     #adding message to the end. Since message is an AES key, we assume that it's in hex in the file
     padded_msg = total_r + int_msg#int(message, 16)
     r_len = int(padded_msg.bit_length()/8) + 1
-    print(r_len)
+    #print(r_len)
     temp = hex(padded_msg)[2:]
-    print(temp)
+    #print(temp)
     
     #find the cipher
     cipher_result = mod_ex(padded_msg, e, N)

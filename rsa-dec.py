@@ -25,7 +25,7 @@ def mod_exp(b,e,n):
 def rsa_dec(ciphertext, N, d, size_N):
     padded_msg = mod_exp(ciphertext, d, N)
     temp = hex(padded_msg)[2:]
-    print(temp)
+    #print(temp)
     #gotta remove padding: check for null byte
     
     #find size of the padded message in bits
@@ -33,18 +33,18 @@ def rsa_dec(ciphertext, N, d, size_N):
 
     #print(int(temp))
     i = padded_msg.bit_length()
-    print(int(i))
+    #print(int(i))
     #convert to bytes
     i = i + (8 - (i % 8))
-    print(i)
+    #print(i)
     i = int(i)
-    print(i)
+    #print(i)
     i = i / 8
     #print "i"
     #print(i)
     #print int(i)
     i = int(i)
-    print(i)
+    #print(i)
     i = i - 1
 
     #search for the null byte marking the changeover from r bytes to message bytes
@@ -74,7 +74,7 @@ def rsa_dec(ciphertext, N, d, size_N):
     result = int(result, 16)
     result = hex(result)[2:]
     #print "result"
-    print(result)
+    #print(result)
     
     return(result)
     
